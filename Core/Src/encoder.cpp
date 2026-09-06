@@ -27,16 +27,28 @@ int32_t Encoder::GetDelta() {
     uint8_t current_a = HAL_GPIO_ReadPin(port_a, pin_a);
     int32_t delta = 0;
 
+    // Простая фильтрация дребезга - проверяем только при изменении
     if (current_a != last_a) {
-        if (current_a == GPIO_PIN_RESET) {
-            uint8_t current_b = HAL_GPIO_ReadPin(port_b, pin_b);
-            if (current_b == GPIO_PIN_SET) {
-                delta = 1;
-            } else {
-                delta = -1;
-            }
+        // Небольшая задержка для фильтрации дребезга
+        uint32_t debounce_start = HAL_GetTick();
+        while ((HAL_GetTick() - debounce_start) < 1) {
+            // Ждем 1мс для стабилизации сигнала
         }
-        last_a = current_a;
+        
+        // Повторно читаем после задержки
+        current_a = HAL_GPIO_ReadPin(port_a, pin_a);
+        
+        if (current_a != last_a) {
+            if (current_a == GPIO_PIN_RESET) {
+                uint8_t current_b = HAL_GPIO_ReadPin(port_b, pin_b);
+                if (current_b == GPIO_PIN_SET) {
+                    delta = 1;
+                } else {
+                    delta = -1;
+                }
+            }
+            last_a = current_a;
+        }
     }
 
     return delta;
