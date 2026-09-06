@@ -1,45 +1,66 @@
 ```
-# Build artifacts
+# Compiled and build artifacts
 *.o
 *.obj
-*.hex
-*.bin
-*.elf
-*.map
-*.axf
 *.out
-
-# STM32 specific
-*.lst
-*.sym
-*.tra
+*.exe
+*.dll
+*.so
+*.a
 
 # Dependencies
-lib/
-libs/
-third_party/
+venv/
+.venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+node_modules/
+dist/
+build/
+target/
+.gradle/
 
 # Logs and temp files
 *.log
 *.tmp
-*.bak
-*.~
-*~
+*.swp
+*.swo
 
-# IDE/Editor
-.cproject
-.project
-.settings/
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
 .vscode/
 .idea/
 
-# OS
+# System files
 .DS_Store
 Thumbs.db
 
-# Debug
-Debug/
-Release/
-*.swp
-*.swo
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
 ```

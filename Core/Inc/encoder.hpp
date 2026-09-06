@@ -1,13 +1,14 @@
 /*
  * encoder.hpp
  *
- *  Created on: 14 авг. 2026 г.
+ *  Created on: 14 авг. 2026 г.
  *      Author: Islam
  */
 
 #ifndef INC_ENCODER_HPP_
 #define INC_ENCODER_HPP_
 
+#ifdef __cplusplus
 
 #include "main.h"
 
@@ -37,6 +38,6 @@ public:
     bool IsButtonPressed();
 };
 
-
+#endif
 
 #endif /* INC_ENCODER_HPP_ */

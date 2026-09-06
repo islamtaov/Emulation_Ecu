@@ -1,13 +1,14 @@
 /*
  * emulator_app.hpp
  *
- *  Created on: 14 авг. 2026 г.
+ *  Created on: 14 авг. 2026 г.
  *      Author: Islam
  */
 
 #ifndef INC_EMULATOR_APP_HPP_
 #define INC_EMULATOR_APP_HPP_
 
+#ifdef __cplusplus
 
 #include "main.h"
 #include "engine_emulator.hpp"
@@ -31,5 +32,12 @@ public:
 extern "C" void EmulatorApp_Init(void);
 extern "C" void EmulatorApp_Run(void);
 
+#else
+
+// C-compatible declarations
+void EmulatorApp_Init(void);
+void EmulatorApp_Run(void);
+
+#endif
 
 #endif /* INC_EMULATOR_APP_HPP_ */
