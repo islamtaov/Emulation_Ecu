@@ -48,6 +48,9 @@ void EngineEmulator::SetRPM(uint32_t rpm) {
 
     current_rpm = rpm;
 
+    // Защита от деления на ноль
+    if (rpm == 0) rpm = 1;
+    
     uint32_t timer_period = 1000000 / rpm;
 
     if (timer_period > 10) {
@@ -92,19 +95,22 @@ void EngineEmulator::HandleToothInterrupt() {
 
     tooth_count++;
 
-    if (tooth_count >= (TEETH_TOTAL - MISSING_TEETH)) {
+    // Проверка на пропущенные зубья (missing teeth)
+    if (tooth_count >= TEETH_TOTAL) {
         tooth_count = 0;
         revolution_count++;
 
         if (revolution_count >= 2) {
             revolution_count = 0;
-            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 20);
         }
     }
 
+    // Генерация сигнала для missing teeth
     if (tooth_count >= (TEETH_TOTAL - MISSING_TEETH)) {
+        // Пропускаем зубья - выключаем сигнал
         __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);
     } else {
+        // Обычный зубец - включаем PWM с 50% заполнением
         uint32_t arr = __HAL_TIM_GET_AUTORELOAD(&htim1);
         __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, (arr / 2) - 1);
     }

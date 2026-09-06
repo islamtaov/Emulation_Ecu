@@ -44,7 +44,12 @@ void LCD_I2C::WriteNibble(uint8_t nibble, uint8_t rs) {
     buffer[2] = data_en;
     buffer[3] = data;
 
-    HAL_I2C_Master_Transmit(hi2c, LCD_ADDR, buffer, 4, 100);
+    HAL_StatusTypeDef status = HAL_I2C_Master_Transmit(hi2c, LCD_ADDR, buffer, 4, 100);
+    if (status != HAL_OK) {
+        // Обработка ошибки I2C - пробуем восстановить шину
+        HAL_I2C_DeInit(hi2c);
+        HAL_I2C_Init(hi2c);
+    }
     HAL_Delay(1);
 }
 

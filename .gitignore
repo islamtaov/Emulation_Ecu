@@ -1,0 +1,45 @@
+```
+# Build artifacts
+*.o
+*.obj
+*.hex
+*.bin
+*.elf
+*.map
+*.axf
+*.out
+
+# STM32 specific
+*.lst
+*.sym
+*.tra
+
+# Dependencies
+lib/
+libs/
+third_party/
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.~
+*~
+
+# IDE/Editor
+.cproject
+.project
+.settings/
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debug
+Debug/
+Release/
+*.swp
+*.swo
+```
