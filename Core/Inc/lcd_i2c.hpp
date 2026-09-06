@@ -1,13 +1,14 @@
 /*
  * lcd_i2c.hpp
  *
- *  Created on: 14 авг. 2026 г.
+ *  Created on: 14 авг. 2026 г.
  *      Author: Islam
  */
 
 #ifndef INC_LCD_I2C_HPP_
 #define INC_LCD_I2C_HPP_
 
+#ifdef __cplusplus
 
 #include "main.h"
 
@@ -32,5 +33,6 @@ public:
     void Print(int value);
 };
 
+#endif
 
 #endif /* INC_LCD_I2C_HPP_ */

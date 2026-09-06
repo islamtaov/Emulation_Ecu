@@ -1,13 +1,14 @@
 /*
  * engine_emulator.hpp
  *
- *  Created on: 14 авг. 2026 г.
+ *  Created on: 14 авг. 2026 г.
  *      Author: Islam
  */
 
 #ifndef INC_ENGINE_EMULATOR_HPP_
 #define INC_ENGINE_EMULATOR_HPP_
 
+#ifdef __cplusplus
 
 #include "main.h"
 #include "lcd_i2c.hpp"
@@ -44,5 +45,6 @@ public:
     uint8_t GetIgnitionState() const { return ignition_state; }
 };
 
+#endif
 
 #endif /* INC_ENGINE_EMULATOR_HPP_ */
