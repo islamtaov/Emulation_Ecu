@@ -1,0 +1,8 @@
+../Core/Src/lcd_i2c.cpp:12:6:void LCD_I2C::Init(I2C_HandleTypeDef*)	1
+../Core/Src/lcd_i2c.cpp:25:6:void LCD_I2C::Command(uint8_t)	1
+../Core/Src/lcd_i2c.cpp:29:6:void LCD_I2C::WriteByte(uint8_t, uint8_t)	1
+../Core/Src/lcd_i2c.cpp:37:6:void LCD_I2C::WriteNibble(uint8_t, uint8_t)	1
+../Core/Src/lcd_i2c.cpp:51:6:void LCD_I2C::Clear()	1
+../Core/Src/lcd_i2c.cpp:56:6:void LCD_I2C::SetCursor(uint8_t, uint8_t)	2
+../Core/Src/lcd_i2c.cpp:62:6:void LCD_I2C::Print(const char*)	2
+../Core/Src/lcd_i2c.cpp:68:6:void LCD_I2C::Print(int)	1

@@ -1,0 +1,8 @@
+../Core/Src/emulator_app.cpp:19:14:static EmulatorApp& EmulatorApp::GetInstance()	8	static
+../Core/Src/emulator_app.cpp:26:6:void EmulatorApp::Init()	16	static
+../Core/Src/emulator_app.cpp:30:6:void EmulatorApp::Run()	16	static
+../Core/Src/emulator_app.cpp:37:6:void EmulatorApp::HandleTimInterrupt()	16	static
+../Core/Src/emulator_app.cpp:42:17:void EmulatorApp_Init()	8	static
+../Core/Src/emulator_app.cpp:46:17:void EmulatorApp_Run()	8	static
+../Core/Src/emulator_app.cpp:48:1:void __static_initialization_and_destruction_0()	8	static
+../Core/Src/emulator_app.cpp:48:1:cpp)	8	static

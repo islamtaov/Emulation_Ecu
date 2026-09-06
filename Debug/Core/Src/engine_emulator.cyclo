@@ -1,0 +1,9 @@
+../Core/Inc/lcd_i2c.hpp:27:5:LCD_I2C::LCD_I2C()	1
+../Core/Inc/encoder.hpp:28:5:Encoder::Encoder()	1
+../Core/Src/engine_emulator.cpp:18:1:EngineEmulator::EngineEmulator()	1
+../Core/Src/engine_emulator.cpp:25:6:void EngineEmulator::Init()	1
+../Core/Src/engine_emulator.cpp:45:6:void EngineEmulator::SetRPM(uint32_t)	5
+../Core/Src/engine_emulator.cpp:64:6:void EngineEmulator::ToggleIgnition()	2
+../Core/Src/engine_emulator.cpp:90:6:void EngineEmulator::HandleToothInterrupt()	5
+../Core/Src/engine_emulator.cpp:113:6:void EngineEmulator::Process()	3
+../Core/Src/engine_emulator.cpp:125:6:void EngineEmulator::UpdateDisplay()	2
